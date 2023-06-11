@@ -1,4 +1,5 @@
-# nginx-openid (OpenID Connect is an identity layer built on top of the OAuth 2.0 protocol.)
+# nginx-openid 
+(OpenID Connect is an identity layer built on top of the OAuth 2.0 protocol.)
 ## Description
 This application uses HTTP Proxy with OpenID Authentication. Please follow official OpenID authentication requirement and do necessary changes.
 
