@@ -1,0 +1,26 @@
+version: '3'
+services:
+
+  nginx:
+    container_name: nginx
+    image: nginx-openid
+    environment:
+      - redirect_uri_path=/redirect_uri
+      - accept_none_alg=true
+      - discovery=<add discovery url from App Registration endpoint>
+      - client_id=<add clientID from App Registration>
+      - client_secret=<copy secret from App Registration>
+      - redirect_uri_scheme=https
+      - logout_path=/logout
+      - redirect_after_logout_uri=/
+      - redirect_after_logout_with_id_token_hint=false
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      ports:
+         - '80:80'
+         - '443:443'
+    volumes:
+      - './nginx/nginx.conf:/etc/openresty/nginx.conf'
+      - './nginx/conf.d:/etc/nginx/conf.d'
+
