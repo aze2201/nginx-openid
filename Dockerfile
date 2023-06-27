@@ -9,7 +9,7 @@ RUN apt-get install git make unzip curl -y
 RUN git clone https://github.com/luarocks/luarocks
 WORKDIR /tmp/luarocks
 
-RUN ./configure && make && make install && mkdir bootstrap
+RUN ./configure && make && make install && make bootstrap
 
 WORKDIR /
 
